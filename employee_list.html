@@ -6,15 +6,18 @@
   <title>Employee List - Sinks R Us</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-8">
+<body class="bg-blue-300 p-8">
 
   <!-- Title -->
-  <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Sinks R Us - Employee Directory</h2>
+  <h2 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-black via-black to-black text-white p-4 rounded-lg shadow-lg">
+    Sinks R Us
+  </h2>
+  
 
   <!-- Employee Table -->
   <div class="overflow-x-auto">
-    <table class="min-w-full bg-white shadow-md rounded-lg">
-      <thead class="bg-blue-500 text-white">
+    <table class="min-w-full bg-yellow-200 shadow-md rounded-lg">
+      <thead class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-black via-black to-black text-white p-4 rounded-lg shadow-lg">
         <tr>
           <th class="py-3 px-6 text-left">Name</th>
           <th class="py-3 px-6 text-left">Job Title</th>
@@ -26,49 +29,49 @@
       <tbody class="text-gray-700">
 
         <!-- Employee Row Template -->
-        <tr class="border-b hover:bg-gray-50 transition-all">
+        <tr class="border-b hover:bg-purple-400 transition-all">
           <td class="py-3 px-6">Ivan Petrov</td>
           <td class="py-3 px-6">Software Engineer</td>
           <td class="py-3 px-6">IT</td>
           <td class="py-3 px-6">ivan.petrov@sinksrus.com</td>
           <td class="py-3 px-6 text-center">
-            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('ivan')">View</button>
+            <button class="bg-purple-800 text-white py-1 px-4 rounded hover:bg-purple-400" onclick="showModal('ivan')">View</button>
           </td>
         </tr>
-        <tr class="border-b hover:bg-gray-50 transition-all">
+        <tr class="border-b hover:bg-purple-400 transition-all">
           <td class="py-3 px-6">Pedro Los Baños</td>
           <td class="py-3 px-6">Marketing Manager</td>
           <td class="py-3 px-6">Marketing</td>
           <td class="py-3 px-6">pedro_los_banos@sinksrus.com</td>
           <td class="py-3 px-6 text-center">
-            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('pedro')">View</button>
+            <button class="bg-purple-800 text-white py-1 px-4 rounded hover:bg-purple-400" onclick="showModal('pedro')">View</button>
           </td>
         </tr>
-        <tr class="border-b hover:bg-gray-50 transition-all">
+        <tr class="border-b hover:bg-purple-400 transition-all">
           <td class="py-3 px-6">Ana Gómez</td>
           <td class="py-3 px-6">HR Specialist</td>
           <td class="py-3 px-6">HR</td>
           <td class="py-3 px-6">ana.gomez@sinksrus.com</td>
           <td class="py-3 px-6 text-center">
-            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('ana')">View</button>
+            <button class="bg-purple-800 text-white py-1 px-4 rounded hover:bg-purple-400" onclick="showModal('ana')">View</button>
           </td>
         </tr>
-        <tr class="border-b hover:bg-gray-50 transition-all">
+        <tr class="border-b hover:bg-purple-400 transition-all">
           <td class="py-3 px-6">John Wu</td>
           <td class="py-3 px-6">Sales Associate</td>
           <td class="py-3 px-6">Sales</td>
           <td class="py-3 px-6">john.wu@sinksrus.com</td>
           <td class="py-3 px-6 text-center">
-            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('john')">View</button>
+            <button class="bg-purple-800 text-white py-1 px-4 rounded hover:bg-purple-400" onclick="showModal('john')">View</button>
           </td>
         </tr>
-        <tr class="border-b hover:bg-gray-50 transition-all">
+        <tr class="border-b hover:bg-purple-400 transition-all">
           <td class="py-3 px-6">Emma Wilson</td>
           <td class="py-3 px-6">CEO</td>
           <td class="py-3 px-6">Admin</td>
           <td class="py-3 px-6">emma.wilson@sinksrus.com</td>
           <td class="py-3 px-6 text-center">
-            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('emma')">View</button>
+            <button class="bg-purple-800 text-white py-1 px-4 rounded hover:gbg-purple-400" onclick="showModal('emma')">View</button>
           </td>
         </tr>
 
@@ -81,7 +84,7 @@
     <div class="bg-white p-8 rounded shadow-md max-w-sm mx-auto mt-20">
       <h3 class="text-2xl font-bold mb-4" id="modalTitle">Employee Info</h3>
       <p id="modalContent">Employee details will be shown here...</p>
-      <button class="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700" onclick="hideModal()">Close</button>
+      <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-purple-400" onclick="hideModal()">Close</button>
     </div>
   </div>
 
