@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee List - Sinks R Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+
+  <!-- Title -->
+  <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Sinks R Us - Employee Directory</h2>
+
+  <!-- Employee Table -->
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white shadow-md rounded-lg">
+      <thead class="bg-blue-500 text-white">
+        <tr>
+          <th class="py-3 px-6 text-left">Name</th>
+          <th class="py-3 px-6 text-left">Job Title</th>
+          <th class="py-3 px-6 text-left">Department</th>
+          <th class="py-3 px-6 text-left">Email</th>
+          <th class="py-3 px-6 text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+
+        <!-- Employee Row Template -->
+        <tr class="border-b hover:bg-gray-50 transition-all">
+          <td class="py-3 px-6">Ivan Petrov</td>
+          <td class="py-3 px-6">Software Engineer</td>
+          <td class="py-3 px-6">IT</td>
+          <td class="py-3 px-6">ivan.petrov@sinksrus.com</td>
+          <td class="py-3 px-6 text-center">
+            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('ivan')">View</button>
+          </td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50 transition-all">
+          <td class="py-3 px-6">Pedro Los Baños</td>
+          <td class="py-3 px-6">Marketing Manager</td>
+          <td class="py-3 px-6">Marketing</td>
+          <td class="py-3 px-6">pedro_los_banos@sinksrus.com</td>
+          <td class="py-3 px-6 text-center">
+            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('pedro')">View</button>
+          </td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50 transition-all">
+          <td class="py-3 px-6">Ana Gómez</td>
+          <td class="py-3 px-6">HR Specialist</td>
+          <td class="py-3 px-6">HR</td>
+          <td class="py-3 px-6">ana.gomez@sinksrus.com</td>
+          <td class="py-3 px-6 text-center">
+            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('ana')">View</button>
+          </td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50 transition-all">
+          <td class="py-3 px-6">John Wu</td>
+          <td class="py-3 px-6">Sales Associate</td>
+          <td class="py-3 px-6">Sales</td>
+          <td class="py-3 px-6">john.wu@sinksrus.com</td>
+          <td class="py-3 px-6 text-center">
+            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('john')">View</button>
+          </td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50 transition-all">
+          <td class="py-3 px-6">Emma Wilson</td>
+          <td class="py-3 px-6">CEO</td>
+          <td class="py-3 px-6">Admin</td>
+          <td class="py-3 px-6">emma.wilson@sinksrus.com</td>
+          <td class="py-3 px-6 text-center">
+            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700" onclick="showModal('emma')">View</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Employee Info Modal -->
+  <div id="employeeModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-8 rounded shadow-md max-w-sm mx-auto mt-20">
+      <h3 class="text-2xl font-bold mb-4" id="modalTitle">Employee Info</h3>
+      <p id="modalContent">Employee details will be shown here...</p>
+      <button class="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700" onclick="hideModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const employeeData = {
+      ivan: {
+        name: "Ivan Petrov",
+        title: "Software Engineer",
+        department: "IT",
+        email: "ivan.petrov@sinksrus.com",
+        phone: "555-6789",
+        address: "12 Red Square, Moscow",
+        sex: "Male",
+        marital: "Single"
+      },
+      pedro: {
+        name: "Pedro Los Baños",
+        title: "Marketing Manager",
+        department: "Marketing",
+        email: "pedro_los_banos@sinksrus.com",
+        phone: "555-6789",
+        address: "123 Mabini St",
+        sex: "Male",
+        marital: "Married"
+      },
+      ana: {
+        name: "Ana Gómez",
+        title: "HR Specialist",
+        department: "HR",
+        email: "ana.gomez@sinksrus.com",
+        phone: "555-1526",
+        address: "Unknown",
+        sex: "Female",
+        marital: "Divorced"
+      },
+      john: {
+        name: "John Wu",
+        title: "Sales Associate",
+        department: "Sales",
+        email: "john.wu@sinksrus.com",
+        phone: "555-6925",
+        address: "456 Rizal St",
+        sex: "Male",
+        marital: "Single"
+      },
+      emma: {
+        name: "Emma Wilson",
+        title: "CEO",
+        department: "Admin",
+        email: "emma.wilson@sinksrus.com",
+        phone: "555-1111",
+        address: "Unknown",
+        sex: "Female",
+        marital: "Married"
+      }
+    };
+
+    function showModal(employeeId) {
+      const employee = employeeData[employeeId];
+      document.getElementById("modalTitle").textContent = employee.name;
+      document.getElementById("modalContent").innerHTML = `
+        <p><strong>Job Title:</strong> ${employee.title}</p>
+        <p><strong>Department:</strong> ${employee.department}</p>
+        <p><strong>Email:</strong> ${employee.email}</p>
+        <p><strong>Contact No.:</strong> ${employee.phone}</p>
+        <p><strong>Address:</strong> ${employee.address}</p>
+        <p><strong>Sex:</strong> ${employee.sex}</p>
+        <p><strong>Marital Status:</strong> ${employee.marital}</p>
+      `;
+      document.getElementById("employeeModal").classList.remove("hidden");
+    }
+
+    function hideModal() {
+      document.getElementById("employeeModal").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>
